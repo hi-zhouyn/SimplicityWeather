@@ -1,0 +1,106 @@
+//
+//  MyWeather.pch
+//  MyWeather
+//
+//  Created by admin on 16/7/14.
+//  Copyright © 2016年 周亚楠. All rights reserved.
+//
+
+#ifndef MyWeather_pch
+#define MyWeather_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifndef __IPHONE_7_0
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+//#define kAUTOLAYOUTSCALE (kSCREEN_HEIGHT / 667.0 )
+#define kAUTOLAYOUTSCALE_HEIGHT (kSCREEN_HEIGHT / 667.0 )
+#define kAUTOLAYOUTSCALE (kSCREEN_WIDTH/375.0)
+#define kAUTOLAYOUTSCALE_iPhone5 0.95
+#define kAUTOLAYOUTSCALE_iPhone6Plus 1.2
+//https://itunes.apple.com/cn/app/id385679094
+
+//#define kAppURL @"https://itunes.apple.com/cn/app/id1020894738"
+
+#define KPushVC1(ViewController)   \
+{\
+ViewController *VC = [[ViewController alloc] init]; \
+[ViewControllerS1 addObject:VC];\
+}
+#define KPushVC2(ViewController)\
+{\
+ViewController *VC = [[ViewController alloc] init]; \
+[ViewControllerS2 addObject:VC];\
+}
+#define KPushVC3(ViewController)\
+{\
+ViewController *VC = [[ViewController alloc] init]; \
+[ViewControllerS3 addObject:VC];\
+}
+#define KPushVC(ViewController)   \
+{\
+ViewController *VC = [[ViewController alloc] init]; \
+[self.navigationController pushViewController:VC animated:YES];\
+}
+#define KPushVCNotTabBar(ViewController)   \
+{\
+ViewController *VC = [[ViewController alloc] init]; \
+[VC setHidesBottomBarWhenPushed:YES];\
+[self.navigationController pushViewController:VC animated:YES];\
+}
+
+
+//工具
+#import "ProjectHeaders.h"
+
+#define iPhone4                                                                \
+([UIScreen instancesRespondToSelector:@selector(currentMode)]                \
+? CGSizeEqualToSize(CGSizeMake(640, 960),                              \
+[[UIScreen mainScreen] currentMode].size)           \
+: NO)
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6                                                                \
+([UIScreen instancesRespondToSelector:@selector(currentMode)]                \
+? CGSizeEqualToSize(CGSizeMake(750, 1334),                              \
+[[UIScreen mainScreen] currentMode].size)           \
+: NO)
+#define iPhone6Plus                                                            \
+([UIScreen instancesRespondToSelector:@selector(currentMode)]                \
+? CGSizeEqualToSize(CGSizeMake(1242, 2208),                             \
+[[UIScreen mainScreen] currentMode].size)           \
+: NO)
+
+#define iOS9 (([[UIDevice currentDevice].systemVersion doubleValue] >= 9.0f) ? NO : YES)
+#define iOS8 (([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0f) ? YES : NO)
+#define iOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0 ? YES : NO)
+
+#define kSCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define kSCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define kStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
+#define kNavBarHeight self.navigationController.navigationBar.height
+#define kNavbarAndStatusHieght (kStatusBarHeight+kNavBarHeight)
+#define kTabBarHeight self.tabBarController.tabBar.height
+#define kSepWidth ([UIScreen mainScreen].bounds.size.width*3/4.0/14)
+#define kLTableViewWidth  ([UIScreen mainScreen].bounds.size.width/4.0)
+
+
+#define kFrameScreen ([UIScreen mainScreen].bounds)
+#define kFrameWithoutBar (CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT-kNavbarAndStatusHieght-kTabBarHeight))
+#define kFrameWithoutNav (CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT-kNavbarAndStatusHieght))
+#define kFrameWithoutNavNotStatus (CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT-kNavBarHeight - kTabBarHeight))
+#define kFrame (CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT))
+#define kFrameWithoutTabBar (CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT-kTabBarHeight))
+#define kFrameWithoutNavAndTabBar (CGRectMake(0, 0, kSCREEN_WIDTH, 45 * 8 * kAUTOLAYOUTSCALE))
+#define kFrameWithoutNavAndBottom (CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT-kNavbarAndStatusHieght- 50 * kAUTOLAYOUTSCALE))
+#define kFrameWithoutNavAndBottom2 (CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT-kNavbarAndStatusHieght))
+#define kFrameWithoutNavAndBottom1 (CGRectMake(0, 1, kSCREEN_WIDTH, kSCREEN_HEIGHT-kNavbarAndStatusHieght- 50 *kAUTOLAYOUTSCALE))
+#define kFrameWithoutNavAndSegment (CGRectMake(0, 43 *kAUTOLAYOUTSCALE, kSCREEN_WIDTH, kSCREEN_HEIGHT-kNavbarAndStatusHieght - 43 *kAUTOLAYOUTSCALE))
+#define kFrameWithoutBarAndSegment (CGRectMake(0, 43 *kAUTOLAYOUTSCALE, kSCREEN_WIDTH, kSCREEN_HEIGHT-kNavbarAndStatusHieght-kTabBarHeight - 43 *kAUTOLAYOUTSCALE))
+#endif
+
+#endif /* MyWeather_pch */
