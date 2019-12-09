@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q2W-xf-oRc"/>
+                        <viewControllerLayoutGuide type="bottom" id="2gG-PB-sMt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="f7u-Av-Xh6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="umbrella" translatesAutoresizingMaskIntoConstraints="NO" id="xX4-eR-ECV">
+                                <rect key="frame" x="40" y="158.66666666666663" width="295" height="295"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xX4-eR-ECV" secondAttribute="height" multiplier="1:1" id="GVr-dM-Shd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2018年 番茄那个鸡蛋. All rights reserved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKT-0D-ef2">
+                                <rect key="frame" x="47" y="749" width="281" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简约天气" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjW-pp-yj6">
+                                <rect key="frame" x="165" y="727" width="45" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iKT-0D-ef2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1Fm-FA-rHK"/>
+                            <constraint firstAttribute="trailing" secondItem="xX4-eR-ECV" secondAttribute="trailing" constant="40" id="2dI-df-RHY"/>
+                            <constraint firstItem="xX4-eR-ECV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="40" id="6YA-kT-eek"/>
+                            <constraint firstAttribute="trailing" secondItem="f7u-Av-Xh6" secondAttribute="trailing" id="FoA-Vl-IL8"/>
+                            <constraint firstItem="2gG-PB-sMt" firstAttribute="top" secondItem="iKT-0D-ef2" secondAttribute="bottom" constant="15" id="HvW-UP-h0j"/>
+                            <constraint firstItem="iKT-0D-ef2" firstAttribute="top" secondItem="XjW-pp-yj6" secondAttribute="bottom" constant="8" id="S7s-zU-vrc"/>
+                            <constraint firstAttribute="bottom" secondItem="f7u-Av-Xh6" secondAttribute="bottom" id="XBF-NN-Il3"/>
+                            <constraint firstItem="f7u-Av-Xh6" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="dzh-FO-Wmi"/>
+                            <constraint firstItem="XjW-pp-yj6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eC3-EB-C6Z"/>
+                            <constraint firstItem="f7u-Av-Xh6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="h2e-Pl-QrB"/>
+                            <constraint firstItem="xX4-eR-ECV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="iT6-0e-Rhf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1080" height="1920"/>
+        <image name="umbrella" width="500" height="500"/>
+    </resources>
+</document>
