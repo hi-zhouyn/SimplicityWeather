@@ -1,9 +1,6 @@
-# MyWeather
-MyWeather
+# SimplicityWeather
+SimplicityWeather，一款简约动画天气，正在完善中...
 
-# 介绍
-这是一个天气的应用<br>
-后续有时间慢慢优化了。
 
 
 
