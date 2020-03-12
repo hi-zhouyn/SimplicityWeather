@@ -40,7 +40,7 @@
 
 #define KColorClear     [UIColor clearColor] //透明色
 #define KColorWhite     [UIColor whiteColor] //白色
-#define KColorBlack     [UIColor blackColor] //黑色
+#define KColorBlack     kSetHEXColor(0x333333) //黑色
 #define KColorBlue      kSetHEXColor(0x8fe0fb)//蓝色
 #define kColorTextGray  kSetHEXColor(0x858585)//文字灰
 #define KColorBGBlue    kSetHEXColor(0xCCE1E5)//背景淡蓝色

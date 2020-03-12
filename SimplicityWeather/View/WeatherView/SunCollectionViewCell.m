@@ -77,8 +77,8 @@
     _riseLabel.text = @"06:51";
     [self.contentView addSubview:_riseLabel];
     [_riseLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(15);
-        make.bottom.equalTo(self.contentView).offset(-15);
+        make.left.equalTo(self.contentView).offset(20);
+        make.bottom.equalTo(self.contentView).offset(-20);
     }];
     
     _riseImageView = [[UIImageView alloc] init];
@@ -97,7 +97,7 @@
     _setLabel.text = @"18:31";
     [self.contentView addSubview:_setLabel];
     [_setLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView.mas_right).offset(-15);
+        make.right.equalTo(self.contentView.mas_right).offset(-20);
         make.centerY.equalTo(self.riseLabel);
     }];
     

@@ -48,10 +48,9 @@
         [self.contentView addSubview:_roundView];
         [_roundView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(width);
-            make.top.equalTo(self.contentView).offset((self.frame.size.height - width - 28) / 2 + 28);
             make.centerX.equalTo(self.contentView);
+            make.bottom.equalTo(self.contentView).offset(-20);
         }];
-        
     }
     return _roundView;
 }

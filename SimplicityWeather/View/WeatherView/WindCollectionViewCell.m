@@ -8,13 +8,14 @@
 
 #import "WindCollectionViewCell.h"
 
-#define KBladeWidth   80
+#define KBladeWidth   CGRectGetWidth(self.frame) / 2.5
 
 @interface WindCollectionViewCell ()
 //@property (nonatomic, strong) UIView *lineView;
 @property (nonatomic, strong) UIView *bladeView;
 @property (nonatomic, strong) UIImageView *poleImageView;
 @property (nonatomic, strong) UILabel *windSpeedLabel;
+@property (nonatomic, strong) CADisplayLink *windDisplaylink;
 @end
 
 @implementation WindCollectionViewCell
@@ -22,14 +23,13 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(eventDidBecomeActive:)                                                     name:UIApplicationDidBecomeActiveNotification
-                                                   object:nil];
         self.title = @"风速";
         [self poleImageView];
         [self buildBladeView];
-        [self startRotationAnimationWithPercent:2];
         self.windSpeedLabel.text = @"2.00M/s";
+        
+        _windDisplaylink = [CADisplayLink displayLinkWithTarget:self selector:@selector(rotateAction)];
+        [_windDisplaylink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     }
     return self;
 }
@@ -64,21 +64,13 @@
     return bladeSubView;
 }
 
-- (void)eventDidBecomeActive:(NSNotification *)sender
+//开始旋转（帧动画方式）
+- (void)rotateAction
 {
-    [self startRotationAnimationWithPercent:2];
+    //后期旋转速度根据角度大小来控制
+    _bladeView.transform = CGAffineTransformRotate(_bladeView.transform, M_PI/50);
 }
 
-- (void)startRotationAnimationWithPercent:(CGFloat)percent;
-{
-    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = [NSNumber numberWithFloat:M_PI * 2];
-    rotationAnimation.duration = percent;
-    rotationAnimation.cumulative = YES;
-    rotationAnimation.autoreverses = NO;
-    rotationAnimation.repeatCount = MAXFLOAT;
-    [_bladeView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
-}
 
 - (UIImageView *)poleImageView
 {
@@ -88,9 +80,9 @@
         _poleImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.contentView addSubview:_poleImageView];
         [_poleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.height.mas_equalTo(80);
-            make.top.equalTo(self.contentView).offset((self.frame.size.height - 80 - 40 - 28) / 2 + 20 + 28);
+            make.width.height.mas_equalTo(KBladeWidth);
             make.centerX.equalTo(self.contentView);
+            make.bottom.equalTo(self.windSpeedLabel.mas_top).offset(-10);
         }];
     }
     return _poleImageView;
@@ -106,7 +98,7 @@
         [self.contentView addSubview:_windSpeedLabel];
         [_windSpeedLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.poleImageView.mas_centerX);
-            make.bottom.equalTo(self.poleImageView.mas_bottom).offset(20);
+            make.bottom.equalTo(self.contentView).offset(-20);
         }];
     }
     return _windSpeedLabel;

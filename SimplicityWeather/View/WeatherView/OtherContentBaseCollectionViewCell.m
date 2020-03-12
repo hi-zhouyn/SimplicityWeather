@@ -43,4 +43,12 @@
     return _titleLabel;
 }
 
+- (CGFloat)commonWidth
+{
+    if (!_commonWidth) {
+        _commonWidth = CGRectGetWidth(self.frame) / 3.3 * 2;
+    }
+    return _commonWidth;
+}
+
 @end

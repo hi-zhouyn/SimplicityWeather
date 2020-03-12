@@ -10,4 +10,5 @@
 
 @interface OtherContentBaseCollectionViewCell : UICollectionViewCell
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, assign) CGFloat commonWidth;
 @end
