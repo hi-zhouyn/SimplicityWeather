@@ -26,7 +26,7 @@
     // Do any additional setup after loading the view.
     [self getCityData];
     [self tableView];
-    
+    self.navigationItem.title = @"城市列表";
 }
 
 - (void)getCityData

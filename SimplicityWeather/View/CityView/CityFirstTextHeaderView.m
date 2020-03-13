@@ -26,11 +26,11 @@
 {
     _viewMode = viewMode;
     if (viewMode == CityFirstTextHeaderViewModeWhite) {
-        self.titleLabel.textColor = kColorTextGray;
+        self.titleLabel.textColor = KColorBlack;
         self.contentView.backgroundColor = KColorWhite;
     }else if (viewMode == CityFirstTextHeaderViewModeGray){
-        self.titleLabel.textColor = KColorWhite;
-        self.contentView.backgroundColor = kColorTextGray;
+        self.titleLabel.textColor = KColorBlack;
+        self.contentView.backgroundColor = kColorLine;
     }
 }
 

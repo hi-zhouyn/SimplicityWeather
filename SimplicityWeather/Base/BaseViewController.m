@@ -42,9 +42,9 @@
 
 - (void)setNav
 {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:kColorMain] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:KColorWhite] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage imageWithColor:kColorBg];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName:KColorWhite}];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName:KColorBlack}];
 }
 
 - (void)setBackBarButtonItem
@@ -52,7 +52,7 @@
     if (self.navigationController.viewControllers.count > 1) {
         self.navigationItem.hidesBackButton = YES;
         self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
-        self.navigationItem.leftBarButtonItem.tintColor = KColorWhite;
+        self.navigationItem.leftBarButtonItem.tintColor = KColorBlack;
     }else{
         self.navigationItem.hidesBackButton = YES;
         [self.navigationItem.leftBarButtonItem.customView setHidden:YES];

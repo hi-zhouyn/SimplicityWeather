@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.rightBarButtonItem = [self getBarButtonItemWithImage:ImageNamed(@"add") action:@selector(addcity)];
+    self.navigationItem.rightBarButtonItem =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"add"] style:UIBarButtonItemStylePlain target:self action:@selector(addcity)];
+    self.navigationItem.rightBarButtonItem.tintColor = KColorBlack;
     self.navigationItem.title = @"城市管理";
     [self tableView];
 }
